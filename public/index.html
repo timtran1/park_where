@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>TimPark</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d097e88e4a.js" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <!--    PWA-->
+    <meta name="theme-color" content="#5cb85c">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.jpg"
+          media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2732-2048.jpg"
+          media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2388.jpg"
+          media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2388-1668.jpg"
+          media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1536-2048.jpg"
+          media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-1536.jpg"
+          media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1668-2224.jpg"
+          media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2224-1668.jpg"
+          media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1620-2160.jpg"
+          media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2160-1620.jpg"
+          media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1284-2778.jpg"
+          media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2778-1284.jpg"
+          media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1170-2532.jpg"
+          media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2532-1170.jpg"
+          media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1125-2436.jpg"
+          media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2436-1125.jpg"
+          media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2688.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2688-1242.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-828-1792.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1792-828.jpg"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1242-2208.jpg"
+          media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-2208-1242.jpg"
+          media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-750-1334.jpg"
+          media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1334-750.jpg"
+          media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-640-1136.jpg"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="icons/apple-splash-1136-640.jpg"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+
+    <!--    end PWA-->
+    <style>
+
+        .funkyradio div {
+            clear: both;
+            overflow: hidden;
+            margin: 1rem;
+        }
+
+        .funkyradio label {
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid #D1D3D4;
+            font-weight: normal;
+        }
+
+        .funkyradio input[type="radio"]:empty,
+        .funkyradio input[type="checkbox"]:empty {
+            display: none;
+        }
+
+        .funkyradio input[type="radio"]:empty ~ label,
+        .funkyradio input[type="checkbox"]:empty ~ label {
+            position: relative;
+            line-height: 2.5em;
+            text-indent: 3.25em;
+            /*margin: 1rem;*/
+            border-radius: 1rem;
+            font-size: 3rem;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .funkyradio input[type="radio"]:empty ~ label:before,
+        .funkyradio input[type="checkbox"]:empty ~ label:before {
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            width: 2.5em;
+            background: #D1D3D4;
+            border-radius: 0.8rem;
+        }
+
+        .funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+        .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+            color: #888;
+        }
+
+        .funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+        .funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f1b9';
+            text-indent: .8em;
+            color: #C2C2C2;
+        }
+
+        .funkyradio input[type="radio"]:checked ~ label,
+        .funkyradio input[type="checkbox"]:checked ~ label {
+            color: green;
+            font-weight: bold;
+        }
+
+        input[type="radio"]:checked + label {
+            border: 2px solid #5cb85c;
+        }
+
+        .funkyradio input[type="radio"]:checked ~ label:before,
+        .funkyradio input[type="checkbox"]:checked ~ label:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f1b9';
+            text-indent: .8em;
+            color: #333;
+            background-color: #ccc;
+        }
+
+        .funkyradio input[type="radio"]:focus ~ label:before,
+        .funkyradio input[type="checkbox"]:focus ~ label:before {
+            box-shadow: 0 0 0 3px #999;
+        }
+
+        .funkyradio-default input[type="radio"]:checked ~ label:before,
+        .funkyradio-default input[type="checkbox"]:checked ~ label:before {
+            color: #333;
+            background-color: #ccc;
+        }
+
+        .funkyradio-primary input[type="radio"]:checked ~ label:before,
+        .funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+            color: #fff;
+            background-color: #337ab7;
+        }
+
+        .funkyradio-success input[type="radio"]:checked ~ label:before,
+        .funkyradio-success input[type="checkbox"]:checked ~ label:before {
+            color: #fff;
+            background-color: #5cb85c;
+        }
+
+        .funkyradio-danger input[type="radio"]:checked ~ label:before,
+        .funkyradio-danger input[type="checkbox"]:checked ~ label:before {
+            color: #fff;
+            background-color: #d9534f;
+        }
+
+        .funkyradio-warning input[type="radio"]:checked ~ label:before,
+        .funkyradio-warning input[type="checkbox"]:checked ~ label:before {
+            color: #fff;
+            background-color: #f0ad4e;
+        }
+
+        .funkyradio-info input[type="radio"]:checked ~ label:before,
+        .funkyradio-info input[type="checkbox"]:checked ~ label:before {
+            color: #fff;
+            background-color: #5bc0de;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="funkyradio" id="radios">
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="1m"/>
+                <label for="1m">1M</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="2f"/>
+                <label for="2f">2F</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="2m"/>
+                <label for="2m">2M</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="3f"/>
+                <label for="3f">3F</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="3m"/>
+                <label for="3m">3M</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="4f"/>
+                <label for="4f">4F</label>
+            </div>
+            <div class="funkyradio-success">
+                <input type="radio" name="radio" id="4m"/>
+                <label for="4m">4M</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+<script>
+    const api_url = '/timpark/api'
+
+    function httpGetAsync(theUrl, callback) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                callback(xmlHttp.responseText);
+        }
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.send(null);
+    }
+
+    httpGetAsync(`${api_url}/get`, res => {
+        console.log(res, 'current')
+        document.getElementById(res).checked = true
+
+        // Set new val if radio changes
+        let rad = document.getElementsByName('radio');
+        let prev = null;
+        for (var i = 0; i < rad.length; i++) {
+            rad[i].addEventListener('change', function () {
+                if (this !== prev) prev = this;
+                console.log(this.id, this.value)
+                httpGetAsync(`${api_url}/set?floor=${this.id}`, res => {
+                    console.log(res)
+                    window.navigator.vibrate(200)
+                })
+            });
+        }
+    })
+
+    // PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+
+</script>
+</body>
+</html>
