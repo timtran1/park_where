@@ -7,7 +7,7 @@ const port = 3000
 
 
 app.get('/timpark/api/get', (req, res) => {
-    fs.readFile('home/tim/park_where/db/db.txt', 'utf8', (err, data) => {
+    fs.readFile('./db/db.txt', 'utf8', (err, data) => {
         if (err) {
             console.error(err)
             res.send('error')
@@ -19,7 +19,7 @@ app.get('/timpark/api/get', (req, res) => {
 app.get('/timpark/api/set', (req, res) => {
     let content = req.query.floor
 
-    fs.writeFile('/home/tim/park_where/db/db.txt', content, err => {
+    fs.writeFile('./db/db.txt', content, err => {
         if (err) {
             console.error(err)
             res.send('error')
