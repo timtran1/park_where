@@ -7,7 +7,7 @@ const port = 3000
 
 
 app.get('/timpark/api/get', (req, res) => {
-    fs.readFile('./db/db.txt', 'utf8', (err, data) => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
             console.error(err)
             res.send('error')
@@ -17,14 +17,25 @@ app.get('/timpark/api/get', (req, res) => {
 })
 
 app.get('/timpark/api/set', (req, res) => {
-    let content = req.query.floor
+    const content = req.query.floor
+    const car = req.query.car
 
-    fs.writeFile('./db/db.txt', content, err => {
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
             console.error(err)
-            res.send('error')
+            res.send('error reading db')
         }
-        res.send('success')
+        let vals = JSON.parse(data)
+        vals[car] = content
+        const new_data = JSON.stringify(vals)
+
+        fs.writeFile('./db/db.json', new_data, err => {
+            if (err) {
+                console.error(err)
+                res.send('error writing db')
+            }
+            res.send('success')
+        })
     })
 })
 
