@@ -14,7 +14,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY . .
+#COPY . .
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]

@@ -26,7 +26,7 @@ app.get('/timpark/api/set', (req, res) => {
             res.send('error reading db')
         }
         let vals = JSON.parse(data)
-        vals[car] = content
+        vals[car] = content + '-' + new Date().toString()
         const new_data = JSON.stringify(vals)
 
         fs.writeFile('./db/db.json', new_data, err => {

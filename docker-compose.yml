@@ -7,3 +7,6 @@ services:
     restart: always
     ports:
       - 3000:3000
+    volumes:
+      - ./index.js:/usr/src/app/index.js
+      - ./db:/usr/src/app/db
