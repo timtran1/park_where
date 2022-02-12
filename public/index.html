@@ -310,8 +310,8 @@
         crossorigin="anonymous"></script>
 <script src="luxon.min.js"></script>
 <script>
-    const api_url = '/timpark/api'
-    // const api_url = 'http://localhost:3000/timpark/api'
+    // const api_url = '/timpark/api'
+    const api_url = 'http://localhost:3000/timpark/api'
 
     const DateTime = luxon.DateTime;
 
@@ -345,20 +345,25 @@
         document.getElementById('toyota_' + t_val).checked = true
 
         // Set new val if radio changes
-        let rad = document.querySelectorAll('[name="radio"], [name="toyota_radio"]');
+        // let rad = document.querySelectorAll('[name="radio"], [name="toyota_radio"]');
+        const radio_containers = document.querySelectorAll('div.funkyradio-success');
         let prev = null;
-        for (var i = 0; i < rad.length; i++) {
-            rad[i].addEventListener('change', function () {
-                if (this !== prev) prev = this;
-                console.log(this.id, this.value)
+
+        for (var i = 0; i < radio_containers.length; i++) {
+            radio_containers[i].addEventListener('click', function () {
+                const radio = this.querySelector('input[type="radio"]')
+                if (radio !== prev) prev = radio;
+                console.log(radio.id, radio.value)
 
                 let car, floor
-                if (this.id.includes('toyota')) {
+                if (radio.id.includes('toyota')) {
                     car = 'toyota'
-                    floor = this.id.replace('toyota_', '')
+                    floor = radio.id.replace('toyota_', '')
+                    document.getElementById('t_date').innerText = 'Last update: just now at ' + DateTime.now().toLocaleString(DateTime.TIME_SIMPLE)
                 } else {
                     car = 'mercedes'
-                    floor = this.id
+                    floor = radio.id
+                    document.getElementById('m_date').innerText = 'Last update: just now at ' + DateTime.now().toLocaleString(DateTime.TIME_SIMPLE)
                 }
 
                 httpGetAsync(`${api_url}/set?floor=${floor}&car=${car}`, res => {
