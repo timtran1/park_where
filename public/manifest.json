@@ -1,7 +1,7 @@
 {
-  "name": "TimPark",
-  "short_name": "TimPark",
-  "start_url": "/timpark",
+  "name": "ParkWhere",
+  "short_name": "ParkWhere",
+  "start_url": "/",
   "icons": [
     {
       "src": "icons/manifest-icon-192.png",
