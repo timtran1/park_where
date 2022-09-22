@@ -310,10 +310,12 @@
         crossorigin="anonymous"></script>
 <script src="luxon.min.js"></script>
 <script>
-    const api_url = '/timpark/api'
-    // const api_url = 'http://localhost:3000/timpark/api'
+    // const api_url = '/timpark/api'
+    const api_url = 'http://localhost:3000/timpark/api'
 
     const DateTime = luxon.DateTime;
+    const Interval = luxon.Interval;
+    const now = DateTime.now()
 
     function httpGetAsync(theUrl, callback) {
         var xmlHttp = new XMLHttpRequest();
@@ -337,8 +339,34 @@
         let t_val = t_vals[0]
         let t_date = DateTime.fromJSDate(new Date(t_vals[1]))
 
-        document.getElementById('m_date').innerText = 'Last update: ' + m_date.toRelativeCalendar() + ' at ' + m_date.toLocaleString(DateTime.TIME_SIMPLE)
-        document.getElementById('t_date').innerText = 'Last update: ' + t_date.toRelativeCalendar() + ' at ' + t_date.toLocaleString(DateTime.TIME_SIMPLE)
+        let m_relative_str, t_relative_str
+        let m_relative = parseInt(now.diff(m_date, ['days']).toObject().days)
+        let t_relative = parseInt(now.diff(t_date, ['days']).toObject().days)
+
+        switch (m_relative) {
+            case 0:
+                m_relative_str = 'today'
+                break
+            case 1:
+                m_relative_str = 'yesterday'
+                break
+            default:
+                m_relative_str = m_relative.toString() + ' days ago'
+        }
+
+        switch (t_relative) {
+            case 0:
+                t_relative_str = 'today'
+                break
+            case 1:
+                t_relative_str = 'yesterday'
+                break
+            default:
+                t_relative_str = t_relative.toString() + ' days ago'
+        }
+
+        document.getElementById('m_date').innerText = 'Last update: ' + m_relative_str + ' at ' + m_date.toLocaleString(DateTime.TIME_SIMPLE)
+        document.getElementById('t_date').innerText = 'Last update: ' + t_relative_str + ' at ' + t_date.toLocaleString(DateTime.TIME_SIMPLE)
 
         // set radio values
         document.getElementById(m_val).checked = true
