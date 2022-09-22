@@ -1,5 +1,1 @@
-[[redirects]]
-  from = "/parkwhere"
-  to = "http://tim835.ddns.net"
-  status = 200
-  force = true
+/parkwhere/*  http://tim835.ddns.net/:splat  200
