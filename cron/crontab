@@ -1,0 +1,1 @@
+0 6 * * * python /app/src/cron.py

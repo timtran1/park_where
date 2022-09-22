@@ -1,12 +1,20 @@
 version: "3.7"
 
 services:
-  timpark:
-    container_name: timpark
+  park_where:
+    container_name: park_where
     build: .
     restart: always
     ports:
       - 3000:3000
     volumes:
       - ./index.js:/usr/src/app/index.js
+      - ./.env:/usr/src/app/.env
       - ./db:/usr/src/app/db
+
+  park_where_cron:
+    container_name: park_where_cron
+    build: ./cron
+    restart: always
+    volumes:
+      - ./cron/cron.py:/app/src/cron.py

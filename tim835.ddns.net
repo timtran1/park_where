@@ -31,7 +31,7 @@ server {
                 deny all;
         }
 
-	location /timpark/api {
+	location /parkwhere/ {
 		proxy_pass http://localhost:3000;
 	}
 
