@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-  park_where:
-    container_name: park_where
+  parkwhere:
+    container_name: parkwhere
     build: .
     restart: always
     ports:
@@ -12,8 +12,8 @@ services:
       - ./.env:/usr/src/app/.env
       - ./db:/usr/src/app/db
 
-  park_where_cron:
-    container_name: park_where_cron
+  parkwhere-cron:
+    container_name: parkwhere-cron
     build: ./cron
     restart: always
     volumes:

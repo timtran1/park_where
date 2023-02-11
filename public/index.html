@@ -309,6 +309,13 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 <script src="luxon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/plugin/relativeTime.js"></script>
+<script>
+    dayjs().format();
+    dayjs.extend(window.dayjs_plugin_relativeTime)
+</script>
+
 <script>
     const api_url = 'https://parkwhere.deepsel.com/parkwhere/api'
     // const api_url = 'http://localhost:3000/parkwhere/api'
@@ -333,40 +340,17 @@
 
         let m_vals = vals['mercedes'].split('-')
         let m_val = m_vals[0]
-        let m_date = DateTime.fromJSDate(new Date(m_vals[1]))
+        const m_date = dayjs(m_vals[1])
+        const m_date_relative = m_date.fromNow()
 
         let t_vals = vals['toyota'].split('-')
         let t_val = t_vals[0]
-        let t_date = DateTime.fromJSDate(new Date(t_vals[1]))
+        const t_date = dayjs(t_vals[1])
+        const t_date_relative = t_date.fromNow()
 
-        let m_relative_str, t_relative_str
-        let m_relative = parseInt(now.diff(m_date, ['days']).toObject().days)
-        let t_relative = parseInt(now.diff(t_date, ['days']).toObject().days)
-
-        switch (m_relative) {
-            case 0:
-                m_relative_str = 'today'
-                break
-            case 1:
-                m_relative_str = 'yesterday'
-                break
-            default:
-                m_relative_str = m_relative.toString() + ' days ago'
-        }
-
-        switch (t_relative) {
-            case 0:
-                t_relative_str = 'today'
-                break
-            case 1:
-                t_relative_str = 'yesterday'
-                break
-            default:
-                t_relative_str = t_relative.toString() + ' days ago'
-        }
-
-        document.getElementById('m_date').innerText = 'Last update: ' + m_relative_str + ' at ' + m_date.toLocaleString(DateTime.TIME_SIMPLE)
-        document.getElementById('t_date').innerText = 'Last update: ' + t_relative_str + ' at ' + t_date.toLocaleString(DateTime.TIME_SIMPLE)
+        // set relative date
+        document.getElementById('m_date').innerText = 'Last update: ' + m_date_relative + ' at ' + m_date.format('HH:mm')
+        document.getElementById('t_date').innerText = 'Last update: ' + t_date_relative + ' at ' + t_date.format('HH:mm')
 
         // set radio values
         document.getElementById(m_val).checked = true
