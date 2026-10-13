@@ -27,8 +27,8 @@ const notify = async (car, days) => {
     console.log(`Message sent: ${info.messageId}`)
 }
 
-// hourly, same as the old cron: a car idle for a multiple of 7 whole days triggers an email
-exports.handler = schedule('6 * * * *', async () => {
+// daily at 06:00 UTC, same as the old cron: a car idle for a multiple of 7 whole days triggers an email
+exports.handler = schedule('0 6 * * *', async () => {
     const vals = await get_cars()
     const now = Date.now()
 

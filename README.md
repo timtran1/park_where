@@ -7,7 +7,7 @@ UPSTASH_REDIS_REST_URL=https://your-db.upstash.io
 UPSTASH_REDIS_REST_TOKEN=your-token
 ```
 
-The hourly idle check (`netlify/functions/notify-idle.js`) also needs:
+The daily idle check (`netlify/functions/notify-idle.js`) also needs:
 ```
 EMAIL_SERVER_HOST=example.com
 EMAIL_SERVER_PORT=465
