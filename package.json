@@ -2,20 +2,16 @@
   "name": "park_where",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "netlify dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.2",
-    "express": "^4.17.1",
-    "fs": "*",
-    "luxon": "^3.0.3",
-    "nodemailer": "^6.7.8"
+    "@netlify/functions": "^6.0.2",
+    "luxon": "^3.7.2",
+    "nodemailer": "^6.10.1"
   }
 }
